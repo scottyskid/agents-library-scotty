@@ -73,10 +73,6 @@ Install whichever of these you plan to use, then verify from a terminal:
 | [Node.js](https://nodejs.org/) (includes `npx`) | the `skills` CLI for other agents | download LTS from nodejs.org | `npx --version` |
 | git | cloning this repo / marketplace installs | [git-scm.com](https://git-scm.com/downloads) | `git --version` |
 
-Because this repo is private, `git` must be able to authenticate to GitHub as an
-account that can read it (e.g. via the [gh CLI](https://cli.github.com/):
-`gh auth login`).
-
 ## Install
 
 ### Claude Code
