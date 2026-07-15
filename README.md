@@ -13,10 +13,9 @@ agents-library-scotty/
     ├── .claude-plugin/
     │   └── plugin.json         # plugin manifest (name, version)
     └── skills/
-        ├── hello-demo/         # trivial skill to verify installs work
         ├── caveman/
         ├── diagnose/
-        ├── ...                 # 21 personal skills total
+        ├── ...                 # 25 personal skills total
         └── zoom-out/
 ```
 
@@ -32,19 +31,22 @@ agents-library-scotty/
 | Skill | Description | Original source |
 |---|---|---|
 | caveman | Ultra-compressed communication mode (~75% fewer tokens) | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/productivity/caveman`) |
+| debug-with-grafana | Structured diagnostic workflow using Grafana observability data | [grafana/gcx](https://github.com/grafana/gcx) (`claude-plugin/skills/debug-with-grafana`) |
 | diagnose | Disciplined diagnosis loop for hard bugs and perf regressions | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/diagnose`) |
+| explore-datasources | Discover available datasources, metrics, labels, and log streams in Grafana | [grafana/gcx](https://github.com/grafana/gcx) (`claude-plugin/skills/explore-datasources`) |
 | find-skills | Discover and install agent skills | [vercel-labs/skills](https://github.com/vercel-labs/skills) (`skills/find-skills`) |
 | gcx | Manage Grafana Cloud resources via the gcx CLI | [grafana/gcx](https://github.com/grafana/gcx) (`claude-plugin/skills/gcx`); local copy has drifted from upstream |
 | grill-me | Relentless interview to stress-test a plan or design | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/productivity/grill-me`) |
 | grill-with-docs | Plan grilling that updates CONTEXT.md/ADRs as decisions crystallise | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/grill-with-docs`) |
 | handoff | Compact the conversation into a handoff document for another agent | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/productivity/handoff`) |
-| hello-demo | Verifies the plugin install path works end to end | original to this repo |
 | improve-codebase-architecture | Find architecture deepening and refactoring opportunities | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/improve-codebase-architecture`) |
+| investigate-alert | Determine why a Grafana alert is firing, its scope and impact | [grafana/gcx](https://github.com/grafana/gcx) (`claude-plugin/skills/investigate-alert`) |
 | prototype | Throwaway prototype to flesh out a design before committing | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/prototype`) |
 | qa | Conversational QA session that files GitHub issues | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/deprecated/qa`) |
 | request-refactor-plan | Refactor plan with tiny commits, filed as a GitHub issue | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/deprecated/request-refactor-plan`) |
 | review | Review changes since a fixed point along Standards + Spec axes | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/in-progress/review`) |
 | scaffold-exercises | Create exercise directory structures that pass linting | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/misc/scaffold-exercises`) |
+| slo-manage | Create, update, pull, push, or delete SLO definitions | [grafana/gcx](https://github.com/grafana/gcx) (`claude-plugin/skills/slo-manage`) |
 | teach | Teach the user a new skill or concept within the workspace | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/productivity/teach`) |
 | to-issues | Break a plan/spec/PRD into independently-grabbable issues | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/to-issues`) |
 | to-prd | Turn the current conversation context into a PRD | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/to-prd`) |
@@ -80,12 +82,11 @@ e.g. via `gh auth login`.)
 
 ### Verify the install
 
-In either tool, start a fresh session and say:
-
-> run the hello demo
-
-You should get a "👋 hello-demo skill loaded successfully!" message echoing today's
-date. If you do, the whole path (repo → marketplace → plugin → skill) works.
+- **Claude Code:** run `claude plugin list` — `my-skills@agents-library-scotty`
+  should show as enabled at the current version. Then in a fresh session, invoke
+  any skill (e.g. say "zoom out") to confirm skills load.
+- **Cowork:** start a fresh session and check that the my-skills skills appear in
+  its capabilities/skills list, or invoke one directly.
 
 ## How to sync changes
 

@@ -1,7 +1,7 @@
 {
   "name": "my-skills",
-  "version": "0.1.1",
-  "description": "Scotty's personal skill library: diagnosis loops, plan grilling, refactor planning, QA/triage workflows, writing helpers, and more. Includes hello-demo for install verification.",
+  "version": "0.2.0",
+  "description": "Scotty's personal skill library: diagnosis loops, plan grilling, refactor planning, QA/triage workflows, Grafana observability skills, writing helpers, and more.",
   "author": {
     "name": "scottyskid",
     "email": "scotty.skidmore@gmail.com"
