@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Scotty's personal skill library: diagnosis loops, plan grilling, refactor planning, QA/triage workflows, writing helpers, and more. Includes hello-demo for install verification.",
   "author": {
-    "name": "ScottySkidmore",
+    "name": "scottyskid",
     "email": "scottys@eftsure.com.au"
   },
   "keywords": ["skills", "productivity", "workflow"]

@@ -28,11 +28,11 @@ agents-library-scotty/
 ### Claude Code
 
 ```
-/plugin marketplace add ScottySkidmore/agents-library-scotty
+/plugin marketplace add scottyskid/agents-library-scotty
 /plugin install my-skills@agents-library-scotty
 ```
 
-(Use the full URL `https://github.com/ScottySkidmore/agents-library-scotty` if the
+(Use the full URL `https://github.com/scottyskid/agents-library-scotty` if the
 shorthand doesn't resolve. For a private repo, make sure `git` can authenticate,
 e.g. via `gh auth login`.)
 
@@ -40,7 +40,7 @@ e.g. via `gh auth login`.)
 
 1. Open **Settings → Capabilities**.
 2. Under plugin marketplaces, choose **Add marketplace** and paste the repo URL:
-   `https://github.com/ScottySkidmore/agents-library-scotty`
+   `https://github.com/scottyskid/agents-library-scotty`
 3. Find **my-skills** in the marketplace listing and click **Install**.
 
 ### Verify the install
