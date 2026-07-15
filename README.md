@@ -112,7 +112,11 @@ All edits happen in this repo — never edit installed copies.
 
 ## Adding a new skill
 
-1. Create `my-skills/skills/<new-skill>/SKILL.md` with YAML frontmatter:
+1. Use the **write-a-skill** skill (included in this plugin) to author it — ask
+   Claude to "write a skill for <what it should do>" and direct the output to
+   `my-skills/skills/<new-skill>/`. It handles proper structure, progressive
+   disclosure, and bundled resources. At minimum a skill is a
+   `my-skills/skills/<new-skill>/SKILL.md` with YAML frontmatter:
 
    ```markdown
    ---
