@@ -96,12 +96,15 @@ are `claude plugin marketplace add …` and `claude plugin install …`.)
 ### Other agents (OpenCode, GitHub Copilot)
 
 ```
-npx skills add scottyskid/agents-library-scotty -g -y --skill '*' --agent opencode --agent github-copilot
+npx skills add https://github.com/scottyskid/agents-library-scotty/tree/main/my-skills/skills -g -y --skill '*' --agent opencode --agent github-copilot
 ```
 
 This installs every skill into the central store at `~/.agents/skills` and records
-this repo as the source in `~/.agents/.skill-lock.json`. Note: repeat `--agent` per
-agent — a comma-separated list is rejected.
+this repo as the source in `~/.agents/.skill-lock.json`. The `skills` CLI discovers
+skills by scanning for `SKILL.md` files; the `/tree/main/my-skills/skills` URL scopes
+that scan to the same folder the Claude plugin uses, so both mechanisms always agree
+on what's canonical. Notes: repeat `--agent` (and `--skill`) per value — a
+comma-separated list is rejected; add `-l` to preview without installing.
 
 ### Verify the install
 
@@ -141,8 +144,8 @@ All edits happen in this repo — never edit installed copies.
      this pulls from the pushed GitHub repo (not your local checkout), so always
      push first. These agents read the central store at `~/.agents/skills`, which
      the `skills` CLI keeps pointed at this repo (see `~/.agents/.skill-lock.json`).
-     To wire a *new* skill into them (update only refreshes existing ones), run
-     `npx skills add scottyskid/agents-library-scotty -g -y --skill '*' --agent opencode --agent github-copilot`.
+     To wire a *new* skill into them (update only refreshes existing ones), re-run
+     the install command from the "Other agents" section above.
 
 ## Adding a new skill
 
