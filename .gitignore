@@ -1,0 +1,11 @@
+# OS cruft
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Local Claude session state (keep the repo tool-agnostic)
+.claude/
