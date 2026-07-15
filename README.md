@@ -17,7 +17,7 @@ agents-library-scotty/
     └── skills/
         ├── caveman/
         ├── diagnose/
-        ├── ...                 # 25 personal skills total
+        ├── ...                 # 26 personal skills total
         └── zoom-out/
 ```
 
@@ -41,6 +41,7 @@ agents-library-scotty/
 | grill-me | Relentless interview to stress-test a plan or design | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/productivity/grill-me`) |
 | grill-with-docs | Plan grilling that updates CONTEXT.md/ADRs as decisions crystallise | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/grill-with-docs`) |
 | handoff | Compact the conversation into a handoff document for another agent | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/productivity/handoff`) |
+| humanizer | Remove signs of AI-generated writing to make text sound natural | [blader/humanizer](https://github.com/blader/humanizer) (`SKILL.md`, v2.8.2, MIT) |
 | improve-codebase-architecture | Find architecture deepening and refactoring opportunities | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/improve-codebase-architecture`) |
 | investigate-alert | Determine why a Grafana alert is firing, its scope and impact | [grafana/gcx](https://github.com/grafana/gcx) (`claude-plugin/skills/investigate-alert`) |
 | prototype | Throwaway prototype to flesh out a design before committing | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/prototype`) |
