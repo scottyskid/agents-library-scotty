@@ -1,7 +1,9 @@
 # agents-library-scotty
 
-Personal Claude plugin marketplace — one git repo as the single source of truth for
-skills used in **Claude Code** and **Cowork** (Claude Desktop).
+Personal agent skill library — one git repo as the single source of truth for
+skills used in **Claude Code** and **Cowork** (Claude Desktop) via the plugin
+marketplace, and in **OpenCode** and **GitHub Copilot** via the
+[`skills` CLI](https://github.com/vercel-labs/skills).
 
 ## What's inside
 
@@ -56,9 +58,9 @@ agents-library-scotty/
 | writing-beats | Shape an article as a journey of beats, choose-your-own-adventure style | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/in-progress/writing-beats`) |
 | zoom-out | Broader context / higher-level perspective on unfamiliar code | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/zoom-out`) |
 
-Sources were recorded from the `skills` CLI lockfile (`~/.agents/.skill-lock.json`)
-at the time the skills were imported (June 2026); copies in this repo are the source
-of truth from then on and may drift from upstream.
+Original sources were captured at import time (June 2026, from the `skills` CLI
+lockfile as it was then). The copies in this repo are the source of truth from then
+on and may drift from upstream — the lockfile itself now points at this repo.
 
 ## Install
 
@@ -80,6 +82,16 @@ e.g. via `gh auth login`.)
    `https://github.com/scottyskid/agents-library-scotty`
 3. Find **my-skills** in the marketplace listing and click **Install**.
 
+### Other agents (OpenCode, GitHub Copilot)
+
+```
+npx skills add scottyskid/agents-library-scotty -g -y --skill '*' --agent opencode --agent github-copilot
+```
+
+This installs every skill into the central store at `~/.agents/skills` and records
+this repo as the source in `~/.agents/.skill-lock.json`. Note: repeat `--agent` per
+agent — a comma-separated list is rejected.
+
 ### Verify the install
 
 - **Claude Code:** run `claude plugin list` — `my-skills@agents-library-scotty`
@@ -87,6 +99,8 @@ e.g. via `gh auth login`.)
   any skill (e.g. say "zoom out") to confirm skills load.
 - **Cowork:** start a fresh session and check that the my-skills skills appear in
   its capabilities/skills list, or invoke one directly.
+- **Other agents:** run `npx skills ls -g` — every skill should list this repo's
+  install with `Agents: GitHub Copilot, OpenCode`.
 
 ## How to sync changes
 
@@ -95,7 +109,9 @@ All edits happen in this repo — never edit installed copies.
 1. Edit or add a skill under `my-skills/skills/<skill-name>/SKILL.md`.
 2. Update the **Skills directory** table in this README (new row for a new skill,
    revised description/source note for a modified one).
-3. Bump `version` in `my-skills/.claude-plugin/plugin.json` (e.g. `0.1.0` → `0.1.1`).
+3. Bump `version` in `my-skills/.claude-plugin/plugin.json` (e.g. `0.1.0` → `0.1.1`),
+   and keep the duplicated `version` fields in `.claude-plugin/marketplace.json`
+   (marketplace metadata + plugin entry) in agreement.
 4. Commit and push:
 
    ```
