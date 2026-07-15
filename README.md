@@ -62,6 +62,21 @@ Original sources were captured at import time (June 2026, from the `skills` CLI
 lockfile as it was then). The copies in this repo are the source of truth from then
 on and may drift from upstream — the lockfile itself now points at this repo.
 
+## Prerequisites
+
+Install whichever of these you plan to use, then verify from a terminal:
+
+| Tool | Needed for | Install | Verify |
+|---|---|---|---|
+| [Claude Code](https://code.claude.com/docs/en/overview) | plugin install in Claude Code | `npm install -g @anthropic-ai/claude-code` (or the native installer) | `claude --version` |
+| [Claude Desktop](https://claude.ai/download) | Cowork | download from claude.ai | open the app → Cowork tab |
+| [Node.js](https://nodejs.org/) (includes `npx`) | the `skills` CLI for other agents | download LTS from nodejs.org | `npx --version` |
+| git | cloning this repo / marketplace installs | [git-scm.com](https://git-scm.com/downloads) | `git --version` |
+
+Because this repo is private, `git` must be able to authenticate to GitHub as an
+account that can read it (e.g. via the [gh CLI](https://cli.github.com/):
+`gh auth login`).
+
 ## Install
 
 ### Claude Code
@@ -72,8 +87,8 @@ on and may drift from upstream — the lockfile itself now points at this repo.
 ```
 
 (Use the full URL `https://github.com/scottyskid/agents-library-scotty` if the
-shorthand doesn't resolve. For a private repo, make sure `git` can authenticate,
-e.g. via `gh auth login`.)
+shorthand doesn't resolve. In a non-interactive shell, the equivalent CLI commands
+are `claude plugin marketplace add …` and `claude plugin install …`.)
 
 ### Cowork (Claude Desktop)
 
