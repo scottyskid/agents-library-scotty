@@ -1,10 +1,10 @@
 {
   "name": "my-skills",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Scotty's personal skill library: diagnosis loops, plan grilling, refactor planning, QA/triage workflows, writing helpers, and more. Includes hello-demo for install verification.",
   "author": {
     "name": "scottyskid",
-    "email": "scottys@eftsure.com.au"
+    "email": "scotty.skidmore@gmail.com"
   },
   "keywords": ["skills", "productivity", "workflow"]
 }
