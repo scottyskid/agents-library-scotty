@@ -110,6 +110,12 @@ All edits happen in this repo — never edit installed copies.
      (or `/plugin marketplace update` in the interactive REPL)
    - **Cowork:** Settings → Capabilities → open the marketplace entry and re-sync /
      update the plugin.
+   - **Other agents (OpenCode, GitHub Copilot):** run `npx skills update -g -y` —
+     this pulls from the pushed GitHub repo (not your local checkout), so always
+     push first. These agents read the central store at `~/.agents/skills`, which
+     the `skills` CLI keeps pointed at this repo (see `~/.agents/.skill-lock.json`).
+     To wire a *new* skill into them (update only refreshes existing ones), run
+     `npx skills add scottyskid/agents-library-scotty -g -y --skill '*' --agent opencode --agent github-copilot`.
 
 ## Adding a new skill
 
