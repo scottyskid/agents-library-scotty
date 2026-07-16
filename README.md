@@ -16,8 +16,9 @@ agents-library-scotty/
     │   └── plugin.json         # plugin manifest (name, version)
     └── skills/
         ├── caveman/
+        ├── daily-focus/
         ├── diagnose/
-        ├── ...                 # 26 personal skills total
+        ├── ...                 # 28 personal skills total
         └── zoom-out/
 ```
 
@@ -33,6 +34,7 @@ agents-library-scotty/
 | Skill | Description | Original source |
 |---|---|---|
 | caveman | Ultra-compressed communication mode (~75% fewer tokens) | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/productivity/caveman`) |
+| daily-focus | Blended, ranked morning brief across calendar, Teams, Todoist, and Notion | Authored by Scotty via Claude Cowork |
 | debug-with-grafana | Structured diagnostic workflow using Grafana observability data | [grafana/gcx](https://github.com/grafana/gcx) (`claude-plugin/skills/debug-with-grafana`) |
 | diagnose | Disciplined diagnosis loop for hard bugs and perf regressions | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/diagnose`) |
 | explore-datasources | Discover available datasources, metrics, labels, and log streams in Grafana | [grafana/gcx](https://github.com/grafana/gcx) (`claude-plugin/skills/explore-datasources`) |
@@ -44,6 +46,7 @@ agents-library-scotty/
 | humanizer | Remove signs of AI-generated writing to make text sound natural | [blader/humanizer](https://github.com/blader/humanizer) (`SKILL.md`, v2.8.2, MIT) |
 | improve-codebase-architecture | Find architecture deepening and refactoring opportunities | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/improve-codebase-architecture`) |
 | investigate-alert | Determine why a Grafana alert is firing, its scope and impact | [grafana/gcx](https://github.com/grafana/gcx) (`claude-plugin/skills/investigate-alert`) |
+| meeting-follow-up | Draft a meeting follow-up recap and post it to Notion for approval | Authored by Scotty via Claude Cowork |
 | prototype | Throwaway prototype to flesh out a design before committing | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/prototype`) |
 | qa | Conversational QA session that files GitHub issues | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/deprecated/qa`) |
 | request-refactor-plan | Refactor plan with tiny commits, filed as a GitHub issue | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/deprecated/request-refactor-plan`) |
