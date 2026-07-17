@@ -59,15 +59,21 @@ Match the meeting to an Outlook calendar invite to get the attendee list:
 The skill only needs **names** to personalise the message — it does not send
 email, so email addresses aren't required.
 
+The delivery channel is always **Teams**. Every follow-up is a Teams message —
+don't infer or ask about the channel.
+
 ### 4. Interview Scotty (hybrid)
 
 Do the heavy lifting first, then let Scotty edit:
 
 1. Present a **draft** of:
    - the most important points discussed, and
-   - the action items, each with an **owner** (map owners to attendee names).
-2. **Number both lists** (key points 1, 2, 3…; action items 1, 2, 3…) so Scotty
-   can reference each one by number to strike it out or edit it.
+   - the action items, each prefixed with an explicit **named owner** (e.g.
+     "Kevin to…", "Scotty to…"), mapped to attendee names — never left
+     unassigned.
+2. **Number both lists** (key points 1, 2, 3…; action items 1, 2, 3…) and show
+   the owner beside each action item so Scotty can correct a wrong owner
+   before drafting, not after.
 3. Ask Scotty to confirm, edit, or remove each point and action item.
 4. Finish with one catch-all question: **"Anything important I missed, or
    anything that shouldn't go in the follow-up?"**
@@ -77,7 +83,9 @@ Incorporate his answers before drafting the message.
 **Selecting key points** — focus on substantive things worth putting on record:
 decisions made, incidents, root causes, process changes, and matters that need
 follow-up. Leave out routine progress updates and general "how's it going"
-chatter unless Scotty flags them as worth recording. Quality over coverage.
+chatter unless Scotty flags them as worth recording. Lean toward
+**under-including**: a short, high-signal list Scotty adds to beats a long one
+he has to trim.
 
 **Keeping action items tight** — consolidate aggressively. The final follow-up
 should land on **2–3 main action items** where appropriate. Merge closely
@@ -85,18 +93,32 @@ related tasks into a single owner-led action, and drop minor or already-handled
 items. Don't produce a long checklist; produce the few things that actually
 matter.
 
+**Precision over inference** — use exact system and product names as they
+appear in the transcript (e.g. JumpCloud, ECS, KeyCloak) rather than
+generalising them into vaguer terms. Don't attribute a commitment, workload, or
+intention to anyone unless the transcript clearly supports it — if it's
+ambiguous who owns something or whether it was actually agreed to, leave it out
+rather than guess.
+
 ### 5. Draft the follow-up message
 
-Write a single, copy-paste-ready message in a **warm, professional colleague
-tone**, first person, as if Scotty wrote it. Structure:
+Write a single, copy-paste-ready **Teams message** in a **warm, professional
+colleague tone**, first person, as if Scotty wrote it. Structure:
 
-- Brief greeting to attendees.
-- A 2–4 sentence summary of what was discussed.
-- A short **Action items** section, each item with its owner.
-- A friendly sign-off.
+- A brief greeting to attendees (e.g. "Hi Kevin,") — this is a Teams message,
+  not an email, so **never** add an email-style sign-off ("Cheers, Scotty" or
+  similar). End the message after the action items.
+- The recap body, structured as **one bold subheading per distinct topic**,
+  each followed by a short paragraph — not a single 2–4 sentence summary
+  block. If the meeting bundled several topics together, split them into
+  separate subheadings rather than one blended paragraph. If a cost issue,
+  blocker, or dependency is attached to a larger item (e.g. a Grafana Cloud
+  cost concern raised under an SSO migration discussion), give it its own
+  subheading instead of burying it as a sub-clause of the bigger topic.
+- A short **Action items** section, each item prefixed with its named owner
+  (e.g. "Kevin to…", "Scotty to…").
 
-Write it as one coherent message (not scattered blocks). No meeting-minutes
-formality.
+Write it as one coherent message, not meeting-minutes formality.
 
 ### 6. Humanize
 
@@ -130,3 +152,8 @@ Confirm to Scotty that it's posted and remind him it's ready for him to send.
   plainly rather than inventing content.
 - Attribute action items to real named owners from the meeting; don't assign
   owners you can't justify from the notes/transcript/attendees.
+- Every action item needs an explicit named owner — never leave one
+  unassigned.
+- The message is always Teams, never email — no email-style sign-off.
+- Use exact system/product names from the transcript; don't attribute
+  commitments or intent that the transcript doesn't clearly support.

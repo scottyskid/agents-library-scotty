@@ -46,7 +46,7 @@ agents-library-scotty/
 | humanizer | Remove signs of AI-generated writing to make text sound natural | [blader/humanizer](https://github.com/blader/humanizer) (`SKILL.md`, v2.8.2, MIT) |
 | improve-codebase-architecture | Find architecture deepening and refactoring opportunities | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/improve-codebase-architecture`) |
 | investigate-alert | Determine why a Grafana alert is firing, its scope and impact | [grafana/gcx](https://github.com/grafana/gcx) (`claude-plugin/skills/investigate-alert`) |
-| meeting-follow-up | Draft a meeting follow-up recap and post it to Notion for approval | Authored by Scotty via Claude Cowork |
+| meeting-follow-up | Draft a Teams-ready meeting follow-up (per-topic subheadings, named owners on every action item) and post it to Notion for approval | Authored by Scotty via Claude Cowork; revised 2026-07-17 based on real-use friction |
 | prototype | Throwaway prototype to flesh out a design before committing | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/prototype`) |
 | qa | Conversational QA session that files GitHub issues | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/deprecated/qa`) |
 | request-refactor-plan | Refactor plan with tiny commits, filed as a GitHub issue | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/deprecated/request-refactor-plan`) |
