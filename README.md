@@ -142,15 +142,36 @@ All edits happen in this repo — never edit installed copies.
 5. Pull the update into each tool:
    - **Claude Code:** `claude plugin marketplace update agents-library-scotty` then
      `claude plugin update my-skills@agents-library-scotty`
-     (or `/plugin marketplace update` in the interactive REPL)
-   - **Cowork:** Settings → Capabilities → open the marketplace entry and re-sync /
-     update the plugin.
+     (or `/plugin marketplace update` in the interactive REPL). Restart to apply.
+   - **Cowork (Claude Desktop) — Scotty's primary surface:** Cowork keeps its **own**
+     plugin materialization (under
+     `%APPDATA%\Claude\local-agent-mode-sessions\…\rpm\plugin_*\`), separate from the
+     Claude Code CLI's cache. In practice it auto-pulls the pushed marketplace update
+     on its own — you do **not** need to run the CLI commands above or the Settings →
+     Capabilities re-sync for Cowork to get the new version. The catch is *when* it
+     takes effect: see the callout below. (If a full restart still shows the old
+     version, then do the manual re-sync: Settings → Capabilities → open the
+     marketplace entry → re-sync / update.)
    - **Other agents (OpenCode, GitHub Copilot):** run `npx skills update -g -y` —
      this pulls from the pushed GitHub repo (not your local checkout), so always
      push first. These agents read the central store at `~/.agents/skills`, which
      the `skills` CLI keeps pointed at this repo (see `~/.agents/.skill-lock.json`).
      To wire a *new* skill into them (update only refreshes existing ones), re-run
      the install command from the "Other agents" section above.
+
+> **A session's skill list is frozen when the chat starts.** Adding or updating a
+> skill never appears in a conversation that was already open — not in Claude Code and
+> not in Cowork. The files update on disk underneath the running session, but its skill
+> registry is a snapshot taken at creation, and there is **no way to refresh an existing
+> chat** (no reindex, no file edit, nothing). So after syncing:
+>
+> - **Start a brand-new chat** to use the new/updated skill. Old chats will never see it —
+>   if you need it for work started in an old chat, open a fresh one and paste the context across.
+> - If even a new chat shows the old version, **fully quit and reopen the app** (Cowork:
+>   Ctrl+Q / quit from the tray, not just closing the window; Claude Code: exit the REPL
+>   entirely) so it rebuilds the skill registry, *then* start the new chat.
+>
+> Rule of thumb: **new skills only reach chats created after they were installed.**
 
 ## Adding a new skill
 
