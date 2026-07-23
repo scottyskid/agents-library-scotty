@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Scotty's personal agent skill library — one source of truth for skills shared between Claude Code and Cowork.",
-    "version": "0.6.0"
+    "version": "0.6.1"
   },
   "plugins": [
     {
       "name": "my-skills",
       "source": "./my-skills",
       "description": "Scotty's personal skills: debugging, planning, reviewing, writing, Grafana observability, and workflow helpers.",
-      "version": "0.6.0",
+      "version": "0.6.1",
       "author": {
         "name": "scottyskid"
       }

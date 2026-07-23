@@ -35,25 +35,55 @@ When given text to humanize:
 The draft → audit → final loop and the deliverable are defined under Process and Output, below.
 
 
-## Voice Calibration (Optional)
+## Voice Calibration
 
-If the user provides a writing sample (their own previous writing), analyze it before rewriting:
+By default this skill rewrites toward a specific person's voice, not a generic "clean"
+one. That target is Scotty's profile in `references/scotty-voice-profile.md` (see "Match
+Scotty's Voice" below), which is always available. If the user points you at a different
+writing sample, calibrate to that one instead and let it take precedence. If the user
+explicitly asks for no voice matching, skip this section and fall back to the default
+natural, varied voice from the PERSONALITY AND SOUL section below.
 
-1. **Read the sample first.** Note:
-   - Sentence length patterns (short and punchy? Long and flowing? Mixed?)
-   - Word choice level (casual? academic? somewhere between?)
-   - How they start paragraphs (jump right in? Set context first?)
-   - Punctuation habits (lots of dashes? Parenthetical asides? Semicolons?)
-   - Any recurring phrases or verbal tics
-   - How they handle transitions (explicit connectors? Just start the next point?)
+Whatever the reference, read it first and note:
+- Sentence length patterns (short and punchy? Long and flowing? Mixed?)
+- Word choice level (casual? academic? somewhere between?)
+- How they start paragraphs (jump right in? Set context first?)
+- Punctuation habits (dashes? Parenthetical asides? Semicolons?)
+- Recurring phrases or verbal tics
+- How they handle transitions (explicit connectors? Just start the next point?)
 
-2. **Match their voice in the rewrite.** Don't just remove AI patterns - replace them with patterns from the sample. If they write short sentences, don't produce long ones. If they use "stuff" and "things," don't upgrade to "elements" and "components."
+Then match that voice in the rewrite. Don't just remove AI patterns, replace them with
+patterns from the reference. If they write short sentences, don't produce long ones. If
+they use "stuff" and "things," don't upgrade to "elements" and "components."
 
-3. **When no sample is provided,** fall back to the default behavior (natural, varied, opinionated voice from the PERSONALITY AND SOUL section below).
-
-### How to provide a sample
+### How to point at a different sample
 - Inline: "Humanize this text. Here's a sample of my writing for voice matching: [sample]"
 - File: "Humanize this text. Use my writing style from [file path] as a reference."
+
+
+## Match Scotty's Voice
+
+When rewriting text authored by or for Scotty, apply his personal voice profile in
+`references/scotty-voice-profile.md` on top of the AI-pattern removal below. Read that
+file for the full picture; the highest-confidence markers to apply are:
+
+1. **Open casually, close with "Cheers".** Email: "Hey [Name]," then "Cheers". Chat:
+   skip the greeting and lead with the point.
+2. **Reach for his words:** "keen" (enthusiasm/intent), "touch base", "shoot it over",
+   "happy to", "leave it with me".
+3. **Vary rhythm his way:** plain, direct sentences, but let reasoning sentences run
+   long with "and"/"if" rather than splitting into tidy equal-length lines.
+4. **Soften asks, keep the point confident:** "feel free to", "do what you can", "I
+   would encourage you to". Rarely a bare command, but never wishy-washy underneath.
+5. **Lean confident:** state things directly and trim hedging. A single light softener
+   ("I believe", "hopefully") is fine; don't stack qualifiers.
+6. **Keep a people-first manager tone** with a little dry, self-deprecating humour.
+7. **Contractions throughout;** keep it relaxed and conversational, not stiff.
+8. **Never** add em/en dashes, rule-of-three, corporate inflation, or signposting
+   (this reinforces the rules below).
+
+This adds to, and never overrides, the AI-pattern removal in the rest of this skill.
+Apply Scotty's voice by default; only skip it when explicitly asked not to.
 
 
 ## PERSONALITY AND SOUL

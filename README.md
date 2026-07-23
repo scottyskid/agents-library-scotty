@@ -43,7 +43,7 @@ agents-library-scotty/
 | grill-me | Relentless interview to stress-test a plan or design | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/productivity/grill-me`) |
 | grill-with-docs | Plan grilling that updates CONTEXT.md/ADRs as decisions crystallise | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/grill-with-docs`) |
 | handoff | Compact the conversation into a handoff document for another agent | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/productivity/handoff`) |
-| humanizer | Remove signs of AI-generated writing to make text sound natural | [blader/humanizer](https://github.com/blader/humanizer) (`SKILL.md`, v2.8.2, MIT) |
+| humanizer | Remove signs of AI-generated writing to make text sound natural | [blader/humanizer](https://github.com/blader/humanizer) (`SKILL.md`, v2.8.2, MIT); local addition: default "Match Scotty's Voice" section + `references/scotty-voice-profile.md` |
 | improve-codebase-architecture | Find architecture deepening and refactoring opportunities | [mattpocock/skills](https://github.com/mattpocock/skills) (`skills/engineering/improve-codebase-architecture`) |
 | investigate-alert | Determine why a Grafana alert is firing, its scope and impact | [grafana/gcx](https://github.com/grafana/gcx) (`claude-plugin/skills/investigate-alert`) |
 | meeting-follow-up | Draft a Teams-ready meeting follow-up (per-topic subheadings, named owners on every action item) and post it to Notion for approval | Authored by Scotty via Claude Cowork; revised 2026-07-17 based on real-use friction |
@@ -128,9 +128,18 @@ All edits happen in this repo — never edit installed copies.
 1. Edit or add a skill under `my-skills/skills/<skill-name>/SKILL.md`.
 2. Update the **Skills directory** table in this README (new row for a new skill,
    revised description/source note for a modified one).
-3. Bump `version` in `my-skills/.claude-plugin/plugin.json` (e.g. `0.1.0` → `0.1.1`),
-   and keep the duplicated `version` fields in `.claude-plugin/marketplace.json`
-   (marketplace metadata + plugin entry) in agreement.
+3. Bump the top-level `version` in `my-skills/.claude-plugin/plugin.json`, and keep
+   the duplicated `version` fields in `.claude-plugin/marketplace.json` (marketplace
+   metadata + plugin entry) in agreement. Which digit moves depends on the change:
+   - **Minor** (second number, e.g. `0.6.0` → `0.7.0`): a skill is **added or removed**.
+   - **Patch** (third number, e.g. `0.6.0` → `0.6.1`): an existing skill is **modified**.
+
+   > **Only these top-level versions move.** A skill's own version (e.g. the
+   > `version:` in `humanizer/SKILL.md`, or a skill's own README version history)
+   > tracks the **upstream source** it was imported from — leave it pinned to that
+   > source version even when you edit the skill locally. The top-level
+   > `plugin.json` + `marketplace.json` versions (kept in sync) are the only ones
+   > that reflect changes made in this repo.
 4. Commit and push:
 
    ```
